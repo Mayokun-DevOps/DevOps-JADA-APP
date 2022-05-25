@@ -1,5 +1,7 @@
 FROM  centos:latest
-MAINTAINER vikashashoke@gmail.com
+MAINTAINER sogsax@gmail.com
+RUN wget 'http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/centos-gpg-keys-8-3.el8.noarch.rpm'
+RUN sudo rpm -i 'centos-gpg-keys-8-3.el8.noarch.rpm'
 RUN yum install -y httpd \
  zip\
  unzip
@@ -13,7 +15,7 @@ EXPOSE 80
  
  
 # FROM  centos:latest
-# MAINTAINER vikashashoke@gmail.com
+# MAINTAINER sogsax@gmail.com
 # RUN yum install -y httpd \
 #  zip\
 #  unzip
