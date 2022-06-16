@@ -1,12 +1,11 @@
-FROM centos:alpine
-MAINTAINER sogsax@gmail.com
-RUN yum -y install httpd
-COPY index.html /var/www/html/
-CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
+FROM ubuntu:18.10
+LABEL maintainer="sogsax@gmail.com"
+
+RUN apt-get update && apt-get -y install apache2
 EXPOSE 80
+
  
-# FROM  centos:alpine
+# FROM  ubunt:18.10
 # MAINTAINER sogsax@gmail.com
-# RUN yum install -y httpd 
-# CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+# RUN apt-get update 
 # EXPOSE 80 
